@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .container{
+        width: 80%;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #27171759;
+        border-radius: 5px;
+    }
+    .kader{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .letitre{
+        text-align: center;
+        font-family: Rubik Mono, sans-serif;
+
+    }
+    .ladescription{
+        text-align: center;
+        
+    }
+    </style>
+
+</head>
+<body>
+    <h1>Voici les articles</h1>
+    
+        
+    
+    
+    {%for i in articles%}
+    <div class="container">
+        <img src="{{i.image.url}}" alt="Image de l'article" style="width: 100%; height: auto; border-radius: 5px;">
+        
+        <div class = "letitre">
+        <p><strong>{{i.titre}}</strong></p>
+        </div>
+
+        <div class=" ladescription">
+        <p>{{i.description}}</p>
+        </div>
+
+        <div class="kader">
+        <p>{{i.auteur.username}}</p>
+        <p>{{i.date_publication}}</p>
+        </div>
+    </div>
+    <br><br>
+    {%endfor%} <br><br>
+
+</body>
+</html>
